@@ -32,6 +32,7 @@ public class ListController {
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
+        tableChoices.put("all","View All");
     }
 
     @GetMapping(value = "")
@@ -42,6 +43,8 @@ public class ListController {
         model.addAttribute("locations", JobData.getAllLocations());
         model.addAttribute("positions", JobData.getAllPositionTypes());
         model.addAttribute("skills", JobData.getAllCoreCompetency());
+        //the 1st parameter is the variable name, should be passed as a string
+        //the 2nd parameter is the value to display dynamically
 
         return "list";
     }
